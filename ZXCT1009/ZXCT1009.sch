@@ -28,6 +28,8 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:bluepill
+LIBS:ZXCT1009-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -111,4 +113,15 @@ Text Label 4100 2750 0    60   ~ 0
 ToLoad
 Text GLabel 4100 3650 2    60   Input ~ 0
 Vin
+$Comp
+L BP U?
+U 1 1 59BF5379
+P 8350 2150
+F 0 "U?" H 8350 3400 60  0000 C CNN
+F 1 "BP" H 8350 3294 60  0000 C CNN
+F 2 "" H 8250 2900 60  0001 C CNN
+F 3 "" H 8250 2900 60  0001 C CNN
+	1    8350 2150
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
