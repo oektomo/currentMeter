@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:ZXCT1009-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -76,16 +77,13 @@ Connection ~ 5650 3150
 Wire Wire Line
 	6050 3150 6300 3150
 Wire Wire Line
-	6300 2800 6300 3400
-Connection ~ 6300 3150
-Wire Wire Line
 	4500 3300 4500 3350
 Wire Wire Line
 	4500 3350 4050 3350
 Wire Wire Line
 	4050 3350 4050 3650
 Wire Wire Line
-	4050 3650 4100 3650
+	4050 3650 4000 3650
 Wire Wire Line
 	4500 3150 4300 3150
 Wire Wire Line
@@ -98,19 +96,6 @@ Wire Wire Line
 	4050 2750 4100 2750
 Text Label 4100 2750 0    60   ~ 0
 ToLoad
-Text GLabel 4100 3650 2    60   Input ~ 0
-Vin
-$Comp
-L BP U2
-U 1 1 59BF5379
-P 8350 2150
-F 0 "U2" H 8350 3400 60  0000 C CNN
-F 1 "BP" H 8350 3294 60  0000 C CNN
-F 2 "Sockets_DIP:DIP-40__600_ELL" H 8250 2900 60  0001 C CNN
-F 3 "" H 8250 2900 60  0001 C CNN
-	1    8350 2150
-	1    0    0    -1  
-$EndComp
 $Comp
 L R R1
 U 1 1 59BF559D
@@ -132,4 +117,50 @@ Text Label 5700 2700 0    60   ~ 0
 Vout
 Text Label 7600 1650 2    60   ~ 0
 Vout
+$Comp
+L BP U2
+U 1 1 59CB6E75
+P 8350 2150
+F 0 "U2" H 8350 3400 60  0000 C CNN
+F 1 "BP" H 8350 3294 60  0000 C CNN
+F 2 "Sockets_DIP:DIP-40__600_ELL" H 8250 2900 60  0001 C CNN
+F 3 "" H 8250 2900 60  0001 C CNN
+	1    8350 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8400 3200 8600 3200
+Connection ~ 8500 3200
+$Comp
+L Screw_Terminal_1x02 J1
+U 1 1 59CB7C36
+P 3800 3750
+F 0 "J1" H 3880 4092 50  0000 C CNN
+F 1 "Screw_Terminal_1x02" H 3880 4001 50  0000 C CNN
+F 2 "Terminal_Blocks:TerminalBlock_Pheonix_MKDS1.5-2pol" H 3800 3525 50  0001 C CNN
+F 3 "" H 3775 3750 50  0001 C CNN
+	1    3800 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Screw_Terminal_1x02 J2
+U 1 1 59CB7FE2
+P 9850 3750
+F 0 "J2" H 9770 3704 50  0000 R CNN
+F 1 "Screw_Terminal_1x02" H 9770 3795 50  0000 R CNN
+F 2 "Terminal_Blocks:TerminalBlock_Pheonix_MKDS1.5-2pol" H 9850 3525 50  0001 C CNN
+F 3 "" H 9825 3750 50  0001 C CNN
+	1    9850 3750
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4000 3850 9650 3850
+Text Label 9650 3650 2    60   ~ 0
+ToLoad
+Connection ~ 6300 3850
+Connection ~ 6300 3400
+Wire Wire Line
+	6300 3150 6300 3850
+Text Label 4050 3450 0    60   ~ 0
+Vin
 $EndSCHEMATC
