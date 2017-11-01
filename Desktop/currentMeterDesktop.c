@@ -12,7 +12,7 @@ int main(int argc, char** argv)
 	char *portname = "/dev/ttyUSB0";
 	int fd = open(portname, O_RDWR | O_NOCTTY | O_SYNC);
 	if (fd < 0) {
-		error_message("error %d opening %s: %s"
+		error_message("error %d opening %s: %s\n"
 			, errno, portname, strerror (errno));
 		return;
 	}

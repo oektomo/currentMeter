@@ -6,6 +6,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#include "serial.h"
+
 int
 set_interface_attribs (int fd, int speed, int parity)
 {
@@ -13,7 +15,7 @@ set_interface_attribs (int fd, int speed, int parity)
         memset (&tty, 0, sizeof tty);
         if (tcgetattr (fd, &tty) != 0)
         {
-                error_message ("error %d from tcgetattr", errno);
+                error_message ("error %d from tcgetattr\n", errno);
                 return -1;
         }
 
@@ -41,7 +43,7 @@ set_interface_attribs (int fd, int speed, int parity)
 
         if (tcsetattr (fd, TCSANOW, &tty) != 0)
         {
-                error_message ("error %d from tcsetattr", errno);
+                error_message ("error %d from tcsetattr\n", errno);
                 return -1;
         }
         return 0;
@@ -54,7 +56,7 @@ set_blocking (int fd, int should_block)
         memset (&tty, 0, sizeof tty);
         if (tcgetattr (fd, &tty) != 0)
         {
-                error_message ("error %d from tggetattr", errno);
+                error_message ("error %d from tggetattr\n", errno);
                 return;
         }
 
@@ -62,6 +64,7 @@ set_blocking (int fd, int should_block)
         tty.c_cc[VTIME] = 5;            // 0.5 seconds read timeout
 
         if (tcsetattr (fd, TCSANOW, &tty) != 0)
-                error_message ("error %d setting term attributes", errno);
+                error_message ("error %d setting term attributes\n", errno);
 }
+
 
