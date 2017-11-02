@@ -11,7 +11,7 @@ int main(int argc, char** argv)
 {
 	printf("Battery monitor \n");
 	if(argc != 2) {
-		printf("usage: \n%s filename\n", argv[0]);
+		printf("usage: \n%s log_file_name\n", argv[0]);
 	return;
 	}
 
